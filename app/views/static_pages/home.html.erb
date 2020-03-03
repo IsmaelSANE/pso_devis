@@ -8,82 +8,6 @@
   <%= image_tag("new-logo-pso.png", id: "logo", :alt => "pso-logo" ) %>
   <br>
   <hr>
-  <!-- <form action="submission.html" method="POST">
-    <h1>TRAVAUX DE PEINTURE - DEVIS EN LIGNE</h1>
-    <section class="protein">
-      <label for="patty">What type of protein would you like?</label>
-      <input type="text" name="patty" id="patty">
-    </section>
-    <hr>
-
-    <section class="patties">
-      <label for="amount">How many patties would you like?</label>
-      <input type="number" name="amount" id="amount">
-    </section>
-    <hr>
-
-    <section class="cooked">
-      <label for="doneness">How do you want your patty cooked</label>
-      <br>
-      <span>Rare</span>
-      <input type="range" name="doneness" id="doneness" value="3" min="1" max="5">
-      <span>Well-Done</span>
-    </section>
-    <hr>
-
-    <section class="toppings">
-      <span>What toppings would you like?</span>
-      <br>
-      <input type="checkbox" name="topping" id="lettuce" value="lettuce">
-      <label for="lettuce">Lettuce</label>
-      <input type="checkbox" name="topping" id="tomato" value="tomato">
-      <label for="tomato">Tomato</label>
-      <input type="checkbox" name="topping" id="onion" value="onion">
-      <label for="onion">Onion</label>
-    </section>
-    <hr>
-
-    <section class="cheesy">
-      <span>Would you like to add cheese?</span>
-      <br>
-      <input type="radio" name="cheese" id="yes" value="yes">
-      <label for="yes">Yes</label>
-      <input type="radio" name="cheese" id="no" value="yes">
-      <label for="no">No</label>
-    </section>
-    <hr>
-
-    <section class="bun-type">
-      <label for="bun">What type of bun would you like?</label>
-      <select name="bun" id="bun">
-        <option value="sesame">Sesame</option>
-        <option value="potatoe">Potato</option>
-        <option value="pretzel">Pretzel</option>
-      </select>
-    </section>
-    <hr>
-
-    <section class="sauce-selection">
-      <label for="sauce">What type of sauce would you like?</label>
-      <input list="sauces" id="sauce" name="sauce">
-      <datalist id="sauces">
-        <option value="ketchup"></option>
-        <option value="mayo"></option>
-        <option value="mustard"></option>
-      </datalist>
-    </section>
-    <hr>
-    <section class="extra-info">
-      <label for="extra">Anything else you want to add?</label>
-      <br>
-      <textarea id="extra" name="extra" rows="3" cols="40"></textarea>
-    </section>
-    <hr>
-
-    <section class="submission">
-      <input type="submit" value="Submit">
-    </section>
-  </form> -->
   <form id="monForm" method="post">
     <h1>TRAVAUX DE PEINTURE - DEVIS EN LIGNE</h1>
   <!--<form id="monForm" action="/form2/rec.php" method="post" >-->
@@ -106,33 +30,32 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="first">Prénom : </label>
-                <input type="text" class="form-control" placeholder="" id="first">
+                <label for="firstname">Prénom : </label>
+                <input type="text" class="form-control" placeholder="" id="firstname">
               </div>
             </div>
             <!--  col-md-6   -->
             <div class="col-md-6">
               <div class="form-group">
-                <label for="last">Nom : </label>
-                <input type="text" class="form-control" placeholder="" id="last">
+                <label for="lastname">Nom : </label>
+                <input type="text" class="form-control" placeholder="" id="lastname">
               </div>
             </div>
             <!--  col-md-6   -->
           </div>
-
           <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="first">Adresse :</label>
-              <input type="text" class="form-control" placeholder="" id="first">
+              <label for="adresse">Adresse :</label>
+              <input type="text" class="form-control" placeholder="" id="adresse">
             </div>
           </div>
           <!--  col-md-6   -->
 
           <div class="col-md-6">
             <div class="form-group">
-              <label for="last">Code postal :</label>
-              <input type="text" class="form-control" placeholder="" id="last">
+              <label for="zipcode">Code postal :</label>
+              <input type="text" class="form-control" placeholder="" id="zipcode">
             </div>
           </div>
           <!--  col-md-6   -->
@@ -141,15 +64,15 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="first">Ville :</label>
-              <input type="text" class="form-control" placeholder="" id="first">
+              <label for="city">Ville :</label>
+              <input type="text" class="form-control" placeholder="" id="city">
             </div>
           </div>
           <!--  col-md-6   -->
 
           <div class="col-md-6">
             <div class="form-group">
-              <label for="last">Email :</label>
+              <label for="email">Email :</label>
               <input type="email" class="form-control" id="email" placeholder="email">
             </div>
           </div>
@@ -161,16 +84,16 @@
             <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="first">Adresse :</label>
-                <input type="text" class="form-control" placeholder="" id="first">
+                <label for="adresse2">Adresse :</label>
+                <input type="text" class="form-control" placeholder="" id="adresse2">
               </div>
             </div>
             <!--  col-md-6   -->
 
             <div class="col-md-6">
               <div class="form-group">
-                <label for="last">Code postal :</label>
-                <input type="text" class="form-control" placeholder="" id="last">
+                <label for="zip">Code postal :</label>
+                <input type="text" class="form-control" placeholder="" id="zip">
               </div>
             </div>
             <!--  col-md-6   -->
@@ -179,8 +102,8 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="first">Ville :</label>
-                <input type="text" class="form-control" placeholder="" id="first">
+                <label for="ctiy2">Ville :</label>
+                <input type="text" class="form-control" placeholder="" id="city2">
               </div>
             </div>
             <!--  col-md-6   -->
@@ -201,20 +124,20 @@
           <div class="form-group" id="fs_ceiling">
             <label for="form_ceiling" data-hasqtip="6" oldtitle="Support en placo BA13 neuf pour des plafonds de 2.50m
              Peinture de marque Plafond Dec." title="">Peinture Plafonds : </label>
-            <input type="number" id="form_ceiling" name="ceiling_m" class="calcceiling validate[required,custom[integer],min[1]] text-input" value="0" min="1" step="any" data-hasqtip="7" oldtitle="Surface habitable" title="" aria-describedby="qtip-7">
+            <input id="form_ceiling" oninput="calculate()" type="number" name="ceiling_m" class="calcceiling validate[required,custom[integer],min[1]] text-input" value="0" min="1" step="any" data-hasqtip="7" oldtitle="Surface habitable" title="" aria-describedby="qtip-7">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group" >
+            m²
+            <input id="form_ceiling_price" type="text" name="ceiling_price" tabindex="-1" readonly="" value="14.5">€
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group" id="eurofield">
             <label for="form_ceiling_total">Total Plafonds HT: </label>
-             <input type="text" id="form_ceiling_total" name="ceiling_total" tabindex="-1" readonly="" value="0">€
+             <input id="form_ceiling_total" type="text"  name="ceiling_total" tabindex="-1" readonly="" value="0">€
              <input type="hidden" name="forfait1e" id="forfait1e" value="0">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group" id="form_ceiling_price">
-            m²
-            <input type="text" name="ceiling_price" tabindex="-1" readonly="" value="14.5">€
           </div>
         </div>
       </fieldset>
@@ -241,6 +164,7 @@
 
       <p id="walls_detail" style="display: none;" class="input_fields_wrap">
         <button class="add_field_button">Ajouter une pièce</button>
+        <div align="center" class="todel">                         <input type="hidden" id="monid" value="2"><select class="piece" name="piece[]"><option value="1">Séjour</option><option value="2">Cuisine</option><option value="3">Chambre1</option><option value="4">Chambre2</option><option value="5">Chambre3</option><option value="6">Chambre4</option><option value="7">WC</option><option value="8">SDB1</option><option value="9">SDB2</option><option value="10">Entrée</option><option value="11">Couloir</option><option value="12">Buanderie</option><option value="13">Garage</option><option value="14">Sous-sol</option><option value="15">Autres</option>                         </select>                         <select class="peinture" name="peinture[]"><option value="2:9.5">Murs Dec. Impression</option><option value="3:13.5">Murs Dec. Satiné Blanc</option><option value="4:15.2">Murs Dec. Satiné Pastel</option>                         </select>                         <input type="number" id="form_wall" name="wall_m[]" class="calcwall validate[required,custom[integer],min[1]] text-input" value="0" min="1" step="any" data-hasqtip="12">m²                         <input type="hidden" id="form_wall_coef" name="wall_coef[]" tabindex="-1" readonly="" value="2.62" title="Le coefficient 2.62 est un standard pour évaluer la surface des murs par rapport au sol">* coef Murs *                         <input type="text" id="form_wall_price" name="wall_price[]" tabindex="-1" readonly="" value="9.5">€ =                         <input type="text" id="form_wall_tot" name="wall_tot[]" tabindex="-1" readonly="" value="0">Total&nbsp;&nbsp;&nbsp;<button class="remove_field">X</button></div>
       </p>
       <p></p>
       <p id="eurofield">
@@ -283,3 +207,4 @@
       </p>
   </form>
 </section>
+<%= javascript_pack_tag 'custom' %>
