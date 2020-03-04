@@ -11,8 +11,18 @@ ceiling.oninput = function() {
   totalTtc.value = (myResult+250) + (((myResult+250)/100) * 20);
 }
 
-let noWall = document.getElementById('noWall');
+let wall = document.getElementById('form_walls');
+wall.oninput = function() {
+  var myBox3 = document.getElementById('form_walls').value;
+  var myBox4 = document.getElementById('form_walls_price').value;
+  var result2 = document.getElementById('form_walls_tot');
+  var myResult2 = myBox3 * myBox4;
+  result2.value = myResult2;
+  var totalMurHt = document.getElementById('form_walls_total');
+  totalMurHt.value = myResult2
+}
 
+let noWall = document.getElementById('noWall');
 noWall.oninput = function() {
   document.getElementById('walls_forfait').style.display ='none';
   document.getElementById('walls_detail').style.display ='none';
@@ -20,7 +30,6 @@ noWall.oninput = function() {
 }
 
 let allWall = document.getElementById('allWall');
-
 allWall.oninput = function() {
   document.getElementById('walls_forfait').style.display ='block';
   document.getElementById('walls_detail').style.display ='none';
@@ -28,7 +37,6 @@ allWall.oninput = function() {
 }
 
 let details = document.getElementById('details');
-
 details.oninput = function() {
   document.getElementById('walls_forfait').style.display ='none';
   document.getElementById('walls_detail').style.display ='block';
