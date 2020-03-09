@@ -25,6 +25,8 @@ wall.oninput = function() {
   totalMurHt.value = myResult2
   var totalHt = document.getElementById('form_totalht');
   totalHt.value = myResult2 + 250 + myResult;
+  var totalTtc = document.getElementById('form_totalttc');
+  totalTtc.value = (myResult2 + 250 + myResult) + (((myResult2 + 250 + myResult)/100) * 20);
 }
 
 let detailswall = document.getElementById('form_wall');
