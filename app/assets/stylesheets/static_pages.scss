@@ -4,11 +4,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 body {
-  background-color: rgb(33, 139, 190);
-  font-family: Rubik, Arial;
+ font-family: Rubik, Arial;
 }
 
+body.homepage {
+ background-color: rgb(33, 139, 190);
+ font-family: Rubik, Arial;
+}
 form {
   text-align: center;
   line-height: 30px;
