@@ -13,7 +13,7 @@
     <div class="col-3">
       <ul>
         <li><strong>DEVIS: N° XXXXX</strong></li>
-        <li>Date: 04/05/2020</li>
+        <li>Date: <%= Time.now.strftime("%d/%m/%Y") %></li>
         <li>Code client: 0113</li>
         <li>Devis valable 2 mois</li>
       </ul>
@@ -26,7 +26,7 @@
         Tél: 06 59 94 26 01 <br> E-mail: sarlpso33@gmail.com
       </p>
     </div>
-    <div class="col-3 adress text-center">
+    <div id="customer" class="col-3 adress text-center">
       <p>
         <strong>Adresse du Client</strong><br>M et Mme Dupont<br>15 Rue du travail<br>
         75012 Paris
@@ -121,3 +121,4 @@
   <span> || </span>
   <a href="original.html">Transformer en pdf</a>
 </div>
+<%= javascript_pack_tag 'devis' %>
