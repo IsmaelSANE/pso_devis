@@ -1,6 +1,123 @@
 <% provide(:title, "Help") %>
-<h1>Help</h1>
+<!-- <h1>Help</h1>
 <p>
   Have a question about the PSO online quotes generator get in touch with
   <a href="https://ismaelsane.github.io/">Airyligth webdevelopment</a>.
-</p>
+</p> -->
+<br><br><br><br><br>
+<div id="p1" class="container" style="overflow: hidden; position: relative; background-color: white; width: 909px; height: 1286px;">
+  <div class="row my-5">
+    <div class="col-9">
+      <%= image_tag("new-logo-pso.png", :alt => "pso-logo" ) %>
+    </div>
+    <div class="col-3">
+      <ul>
+        <li><strong>DEVIS: N° XXXXX</strong></li>
+        <li>Date: 04/05/2020</li>
+        <li>Code client: 0113</li>
+        <li>Devis valable 2 mois</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 condition1">
+      <p>
+        <strong>PSO SARL</strong><br>9B RUE PERES<br>33600 PESSAC<br>
+        Tél: 06 59 94 26 01 <br> E-mail: sarlpso33@gmail.com
+      </p>
+    </div>
+    <div class="col-3 adress text-center">
+      <p>
+        <strong>Adresse du Client</strong><br>M et Mme Dupont<br>15 Rue du travail<br>
+        75012 Paris
+      </p>
+    </div>
+  </div>
+  <br><br><br><br><br>
+  <div class="row">
+    <div class="col">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Désignation</th>
+            <th scope="col">Unité</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix unitaire</th>
+            <th scope="col">TOTAL HT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Peinture Plafonds</td>
+            <td>m²</td>
+            <td>Quantité</td>
+            <td>14.5€</td>
+            <td>TOTAL HT€</td>
+          </tr>
+          <tr>
+            <td>Ensemble des murs</td>
+            <td>m²</td>
+            <td>Quantité</td>
+            <td>14.5€</td>
+            <td>TOTAL HT€</td>
+          </tr>
+          <tr>
+            <td>Forfait Protection des ouvrants</td>
+            <td>U</td>
+            <td>1</td>
+            <td>250€</td>
+            <td>250€</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="row">
+    <div class="col-9 condition">
+      <strong>Conditions de règlement:</strong><br>Accompte de 20% à la commande.<br>
+      Accompte de 30% au début des travaux.<br>Solde à la livraison; paiement comptant
+      dès réception.
+    </div>
+    <div class="col-3">
+      <ul>
+        <li><strong>TOTAL HT:  XXXXX</strong></li>
+        <li><strong>TVA 20%:   XXXXX</strong></li>
+        <li><strong>TOTAL TTC: XXXXX</strong></li>
+      </ul>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col">
+      <p class="condition">
+      Merci de nous retourner un exemplaire de ce Devis signé avec vôtre nom et
+      revêtu de la mension "Bon pour accord et commande"
+      </p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-4 corporat text-center">
+      <p style = "text-decoration:underline;">Pour l'entreprise</p>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4 signatur">
+      <p class="text-center" style = "text-decoration:underline;">Pour le client</p>
+      <p>A &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Le</p>
+      <p>Mention</p>
+      <p>Nom &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Signature</p>
+    </div>
+  </div>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <div class="row justify-content-center">
+    <p class="sideline">SARL PSO Capital de 10000€ Siret 53978975000038 RCS Bordeaux 539 789 750 CODE APE 4321A</p>
+  </div>
+</div>
+<div style="margin: 0 auto;width: 100px;">
+  <hr>
+  <%= link_to "Nouveau Devis", "/" %>
+  <span> || </span>
+  <a href="original.html">Transformer en pdf</a>
+</div>
