@@ -16,6 +16,13 @@ const adresse = words.get('adresse');
 const zipCode = words.get('zipcode');
 const city = words.get('city');
 const gender = words.get('form_gender');
+const ceilingQuant = words.get('ceiling_m');
+const ceilingTot = words.get('ceiling_total');
+const wallsQuant = words.get('walls_m');
+const wallsTot = words.get('walls_tot');
+const totalHt = words.get('totalht');
+const totalTtc = words.get('totalttc');
+const tva = (totalTtc*10 - totalHt*10) / 10;
 // const answer = cleanAndCap(words.get('answer'));
 // const conjunction = answer === 'Yes' ? 'and' : 'but';
 
@@ -28,5 +35,9 @@ const gender = words.get('form_gender');
 
 // Grabbing the title element
 const customer = document.getElementById('customer');
+const customerHt = document.getElementById('customerHt');
+const body = document.getElementById('bodyForm');
 // Populating the title element with text
 customer.innerHTML = `<p><strong>Adresse du Client</strong><br>${gender} ${firstName} ${lastName}<br>${adresse}<br>${zipCode} ${city}</p>`;
+customerTot.innerHTML = `<li><strong>TOTAL HT:&nbsp;&nbsp;&nbsp;${totalHt}€</strong></li><li><strong>TVA 20%:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${tva}€</strong></li><li><strong>TOTAL TTC: ${totalTtc}€</strong></li>`
+body.innerHTML = `<tr><td>Peinture Plafonds</td><td>m²</td><td>${ceilingQuant}</td><td>14.5€</td><td>${ceilingTot}€</td></tr><tr><td>Ensemble des murs</td><td>m²</td><td>${wallsQuant}</td><td>14.5€</td><td>${wallsTot}€</td></tr><tr><td>Forfait Protection des ouvrants</td><td>U</td><td>1</td><td>250€</td><td>250€</td></tr>`
