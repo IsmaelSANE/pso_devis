@@ -16,6 +16,10 @@ const adresse = words.get('adresse');
 const zipCode = words.get('zipcode');
 const city = words.get('city');
 const gender = words.get('form_gender');
+const adresse2 = words.get('adresse2');
+const zipCode2 = words.get('zipcode2');
+const city2 = words.get('city2');
+const phone = words.get('phone');
 const ceilingQuant = words.get('ceiling_m');
 const ceilingTot = words.get('ceiling_total');
 const wallsQuant = words.get('walls_m');
@@ -35,9 +39,12 @@ const tva = (totalTtc*10 - totalHt*10) / 10;
 
 // Grabbing the title element
 const customer = document.getElementById('customer');
+const constructionSite = document.getElementById('constructionSite');
 const customerHt = document.getElementById('customerHt');
 const body = document.getElementById('bodyForm');
+
 // Populating the title element with text
 customer.innerHTML = `<p><strong>Adresse du Client</strong><br>${gender} ${firstName} ${lastName}<br>${adresse}<br>${zipCode} ${city}</p>`;
+constructionSite.innerHTML = `<strong>Adresse du chantier:</strong><br>${adresse2}<br>${zipCode2} ${city2}<br>Téléphone: ${phone}`
 customerTot.innerHTML = `<li><strong>TOTAL HT:&nbsp;&nbsp;&nbsp;${totalHt}€</strong></li><li><strong>TVA 20%:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${tva}€</strong></li><li><strong>TOTAL TTC: ${totalTtc}€</strong></li>`
 body.innerHTML = `<tr><td>Peinture Plafonds</td><td>m²</td><td>${ceilingQuant}</td><td>14.5€</td><td>${ceilingTot}€</td></tr><tr><td>Ensemble des murs</td><td>m²</td><td>${wallsQuant}</td><td>14.5€</td><td>${wallsTot}€</td></tr><tr><td>Forfait Protection des ouvrants</td><td>U</td><td>1</td><td>250€</td><td>250€</td></tr>`

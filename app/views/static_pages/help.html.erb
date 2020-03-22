@@ -5,9 +5,9 @@
   <a href="https://ismaelsane.github.io/">Airyligth webdevelopment</a>.
 </p> -->
 <br><br><br><br><br>
-<div id="p1" class="container" style="overflow: hidden; position: relative; background-color: white; width: 909px; height: 1286px;">
+<div id="p1" class="container" style="overflow: hidden; position: relative; background-color: white; width: 909px; height: 1286px;border: 1px solid silver;">
   <div class="row my-5">
-    <div class="col-9">
+    <div class="col-9" style="padding-left:0;">
       <%= image_tag("new-logo-pso.png", :alt => "pso-logo" ) %>
     </div>
     <div class="col-3">
@@ -26,12 +26,7 @@
         Tél: 06 59 94 26 01 <br> E-mail: sarlpso33@gmail.com
       </p>
     </div>
-    <div id="customer" class="col-3 adress text-center">
-      <p>
-        <strong>Adresse du Client</strong><br>M et Mme Dupont<br>15 Rue du travail<br>
-        75012 Paris
-      </p>
-    </div>
+    <div id="customer" class="col-3 adress text-center"></div>
   </div>
   <br><br><br><br><br>
   <div class="row">
@@ -46,39 +41,13 @@
             <th scope="col">TOTAL HT</th>
           </tr>
         </thead>
-        <tbody id="bodyForm">
-          <tr>
-            <td>Peinture Plafonds</td>
-            <td>m²</td>
-            <td>Quantité</td>
-            <td>14.5€</td>
-            <td>TOTAL HT€</td>
-          </tr>
-          <tr>
-            <td>Ensemble des murs</td>
-            <td>m²</td>
-            <td>Quantité</td>
-            <td>14.5€</td>
-            <td>TOTAL HT€</td>
-          </tr>
-          <tr>
-            <td>Forfait Protection des ouvrants</td>
-            <td>U</td>
-            <td>1</td>
-            <td>250€</td>
-            <td>250€</td>
-          </tr>
-        </tbody>
+        <tbody id="bodyForm"></tbody>
       </table>
     </div>
   </div>
   <br><br><br>
   <div class="row">
-    <div class="col-9 condition">
-      <strong>Conditions de règlement:</strong><br>Accompte de 20% à la commande.<br>
-      Accompte de 30% au début des travaux.<br>Solde à la livraison; paiement comptant
-      dès réception.
-    </div>
+    <div id="constructionSite" class="col-9 condition"></div>
     <div class="col-3">
       <ul id="customerTot">
       </ul>
@@ -88,13 +57,14 @@
   <div class="row">
     <div class="col">
       <p class="condition">
-      Merci de nous retourner un exemplaire de ce Devis signé avec vôtre nom et
-      revêtu de la mension "Bon pour accord et commande"
+        Accompte de 20% à la commande. Accompte de 30% au début des travaux. Solde à la livraison; paiement comptant dès réception.<br><br>
+        Merci de nous retourner un exemplaire de ce Devis signé avec vôtre nom et
+        revêtu de la mension "Bon pour accord et commande"
       </p>
     </div>
   </div>
   <br><br>
-  <div class="row">
+  <div class="row mx-2">
     <div class="col-4 corporat text-center">
       <p style = "text-decoration:underline;">Pour l'entreprise</p>
     </div>
