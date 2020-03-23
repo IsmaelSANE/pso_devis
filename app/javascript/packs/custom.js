@@ -96,6 +96,7 @@ let impression2 = document.getElementById("fw2");
 impression2.onclick = function() {
   document.querySelector('.coefMurs2').value = impression2.value;
 }
+// force the script reload and re-execute
 function load_js()
  {
     var head= document.getElementsByTagName('head')[0];
