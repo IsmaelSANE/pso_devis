@@ -96,3 +96,11 @@ let impression2 = document.getElementById("fw2");
 impression2.onclick = function() {
   document.querySelector('.coefMurs2').value = impression2.value;
 }
+function load_js()
+ {
+    var head= document.getElementsByTagName('head')[0];
+    var script= document.createElement('script');
+    script.src= 'source_file.js';
+    head.appendChild(script);
+ }
+load_js();
