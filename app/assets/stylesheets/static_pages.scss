@@ -12,6 +12,7 @@ body {
 body.homepage {
  background-color: rgb(33, 139, 190);
  font-family: Rubik, Arial;
+ font-size: 16px;
 }
 table {
   height: 40%;
@@ -82,19 +83,15 @@ form {
   height: 80%;
   overflow: auto;
 }
-
 form hr {
   width: 15%;
 }
-
 h1 {
   text-align: center;
 }
-
 #burger {
   max-height: 30%;
 }
-
 #overlay {
   width: 80%;
   margin: 3% auto;
@@ -102,14 +99,12 @@ h1 {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 40px;
 }
-
 #logo {
   height: 100px;
   display: block;
   margin: auto;
 }
-
-
 .toppings label, .cheesy label {
   margin-right: 25px;
 }
+
