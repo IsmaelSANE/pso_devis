@@ -27,11 +27,18 @@ const wallsTot = words.get('walls_tot');
 const totalHt = words.get('totalht');
 const totalTtc = words.get('totalttc');
 const tva = (totalTtc*10 - totalHt*10) / 10;
-// const answer = cleanAndCap(words.get('answer'));
-// const conjunction = answer === 'Yes' ? 'and' : 'but';
-
-// const thirdAnimal = cleanAndCap(words.get('animal-3'));
-// const quote = words.get('quote');
+const wallPrice = words.get('totalttc');
+const wallsCoef = words.get('walls_price');
+const walls = words.get('form_peinture');
+if (walls ==  9.5) {
+  roomDetails = "Murs Impression";
+} else if (walls == 12) {
+  roomDetails = "Murs Blanc Mat";
+} else if (walls == 14) {
+  roomDetails = "Murs Blanc Velour";
+} else if (walls == 16) {
+  roomDetails = "Murs Pastel";
+}
 
 // const verb1 = words.get('verb-1');
 // const num1 = words.get('num-1');
@@ -43,8 +50,10 @@ const constructionSite = document.getElementById('constructionSite');
 const customerHt = document.getElementById('customerHt');
 const body = document.getElementById('bodyForm');
 
+
+
 // Populating the title element with text
 customer.innerHTML = `<p><strong>Adresse du Client</strong><br>${gender} ${firstName} ${lastName}<br>${adresse}<br>${zipCode} ${city}</p>`;
 constructionSite.innerHTML = `<strong>Adresse du chantier:</strong><br>${adresse2}<br>${zipCode2} ${city2}<br>Téléphone: ${phone}`
 customerTot.innerHTML = `<li><strong>TOTAL HT:&nbsp;&nbsp;&nbsp;${totalHt}€</strong></li><li><strong>TVA 20%:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${tva}€</strong></li><li><strong>TOTAL TTC: ${totalTtc}€</strong></li>`
-body.innerHTML = `<tr><td>Peinture Plafonds</td><td>m²</td><td>${ceilingQuant}</td><td>14.5€</td><td>${ceilingTot}€</td></tr><tr><td>Ensemble des murs</td><td>m²</td><td>${wallsQuant}</td><td>14.5€</td><td>${wallsTot}€</td></tr><tr><td>Forfait Protection des ouvrants</td><td>U</td><td>1</td><td>250€</td><td>250€</td></tr>`
+body.innerHTML = `<tr><td>Peinture Plafonds</td><td>m²</td><td>${ceilingQuant}</td><td>14.5€</td><td>${ceilingTot}€</td></tr><tr><td>${roomDetails}</td><td>m²</td><td>${wallsQuant}</td><td>${wallsCoef}€</td><td>${wallsTot}€</td></tr><tr><td>Forfait Protection des ouvrants</td><td>U</td><td>1</td><td>250€</td><td>250€</td></tr>`

@@ -116,22 +116,23 @@
                <label for="check_walls" data-hasqtip="8" oldtitle="Support en placo BA13 neuf pour des plafonds de 2.50m" title="">Peinture Murs : </label>
                <input type="radio" id="noWall" name="check_walls" value="0" checked="true"> Pas de murs
                <input type="radio" id="allWall" name="check_walls" value="1"> Ensemble des murs
-               <input type="radio" id="details" name="check_walls" value="2"> Détails
+               <!-- <input type="radio" id="details" name="check_walls" value="2"> Détails -->
         </p>
         <p id="walls_forfait" style="display: none;">
          <!-- <label for="form_walls" title="en mode forfait la surface de references est egale a celle des plafonds">Peinture Tous les murs : </label>-->
          <select id="fw" class="form_peinture" name="form_peinture">
-            <option class="impress" value="9.5">Murs Dec. Impression</option>
-            <option class="satineBlanc" value="13.5">Murs Dec. Satiné Blanc</option>
-            <option class="satinePastel" value="15.2">Murs Dec. Satiné Pastel</option>
+            <option class="impress" value="9.5">Murs Impression</option>
+            <option class="satineBlanc" value="12">Murs Blanc Mat</option>
+            <option class="satinePastel" value="14">Murs Blanc Velour</option>
+            <option class="satine" value="16">Murs Pastel</option>
          </select>
          <input type="text" id="form_walls" name="walls_m" class="calcwalls" tabindex="-1" value="0">m²
          <input type="hidden" id="form_walls_coef" name="walls_coef" tabindex="-1" readonly="" value="2.62" data-hasqtip="9" oldtitle="Le coefficient 2.62 est un standard pour évaluer la surface des murs par rapport au sol" title="">* coef Murs *
          <input type="text" id="form_walls_price" class="coefMurs" name="walls_price" tabindex="-1" readonly="" value="9.5">€ =
          <input type="text" id="form_walls_tot" name="walls_tot" tabindex="-1" readonly="" value="0">Total
         </p>
-        <!-- <p id="walls_detail" style="display: none;" class="input_fields_wrap">
-          <button type="button" class="add_field_button">Ajouter une pièce</button>
+        <p id="walls_detail" style="display: none;" class="input_fields_wrap">
+          <!-- <button type="button" class="add_field_button">Ajouter une pièce</button>
           <div align="center" id="todel" class="todel" style="display: none;">
             <input type="hidden" id="monid" value="2">
             <select class="piece">
@@ -160,8 +161,8 @@
             <input type="hidden" id="form_wall_coef" value="2.62" title="Le coefficient 2.62 est un standard pour évaluer la surface des murs par rapport au sol">* coef Murs *
             <input type="text" id="form_wall_price" class="coefMurs2" value="9.5">€ =
             <input type="text" id="form_wall_tot" value="0">Total
-          </div>
-        </p> -->
+          </div> -->
+        </p>
         <p></p>
         <p id="eurofield">
            <label for="form_walls_total">Total Murs HT : </label>

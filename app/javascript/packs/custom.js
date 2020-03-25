@@ -29,17 +29,17 @@ wall.oninput = function() {
   totalTtc.value = (myResult2 + 250 + myResult) + (((myResult2 + 250 + myResult)/100) * 20);
 }
 
-let detailswall = document.getElementById('form_wall');
-detailswall.oninput = function() {
+// let detailswall = document.getElementById('form_wall');
+// detailswall.oninput = function() {
 
-  var myBox5 = document.getElementById('form_wall').value;
-  var myBox6 = document.getElementById('form_wall_price').value;
-  var result3 = document.getElementById('form_wall_tot');
-  var myResult3 = myBox5 * myBox6;
-  result3.value = myResult3;
+//   var myBox5 = document.getElementById('form_wall').value;
+//   var myBox6 = document.getElementById('form_wall_price').value;
+//   var result3 = document.getElementById('form_wall_tot');
+//   var myResult3 = myBox5 * myBox6;
+//   result3.value = myResult3;
 
-  totalMurHt.value = myResult3;
-}
+//   totalMurHt.value = myResult3;
+// }
 
 let noWall = document.getElementById('noWall');
 noWall.oninput = function() {
@@ -52,15 +52,15 @@ let allWall = document.getElementById('allWall');
 allWall.oninput = function() {
   document.getElementById('walls_forfait').style.display ='block';
   document.getElementById('walls_detail').style.display ='none';
-  document.getElementById('todel').style.display ='none';
+  // document.getElementById('todel').style.display ='none';
 }
 
-let details = document.getElementById('details');
-details.oninput = function() {
-  document.getElementById('walls_forfait').style.display ='none';
-  document.getElementById('walls_detail').style.display ='block';
-  document.getElementById('todel').style.display ='block';
-}
+// let details = document.getElementById('details');
+// details.oninput = function() {
+//   document.getElementById('walls_forfait').style.display ='none';
+//   document.getElementById('walls_detail').style.display ='block';
+//   document.getElementById('todel').style.display ='block';
+// }
 $(document).ready(function() {
     var max_fields = 10;
     var wrapper = $(".input_fields_wrap");
@@ -96,6 +96,12 @@ let impression2 = document.getElementById("fw2");
 impression2.onclick = function() {
   document.querySelector('.coefMurs2').value = impression2.value;
 }
+// Get inner html of the selected option
+// let select = document.getElementById("fw");
+// select.onchange = function(){
+//   const roomDetails = this.options[this.selectedIndex].text;
+// };
+
 // force the script reload and re-execute
 function load_js()
  {
