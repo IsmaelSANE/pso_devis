@@ -29,31 +29,31 @@
         <div class="row">
           <div class="form-group col-sm-12 col-md-6">
             <label for="firstname">Prénom : </label>
-            <input type="text" class="form-control" placeholder="" id="firstname" name="firstname">
+            <input type="text" class="form-control" placeholder="" id="firstname" name="firstname" required>
           </div>
           <div class="form-group col-sm-12 col-md-6">
             <label for="lastname">Nom : </label>
-            <input type="text" class="form-control" placeholder="" id="lastname" name="lastname">
+            <input type="text" class="form-control" placeholder="" id="lastname" name="lastname" required>
           </div>
         </div>
         <div class="row">
           <div class="form-group col-sm-12 col-md-6">
             <label for="adresse">Adresse :</label>
-            <input type="text" class="form-control" placeholder="" id="adresse"  name="adresse">
+            <input type="text" class="form-control" placeholder="" id="adresse"  name="adresse" required>
           </div>
           <div class="form-group col-sm-12 col-md-6">
             <label for="zipcode">Code postal :</label>
-            <input type="text" class="form-control" placeholder="" id="zipcode" name="zipcode">
+            <input type="text" class="form-control" placeholder="" id="zipcode" name="zipcode" required>
           </div>
         </div>
         <div class="row">
           <div class="form-group col-sm-12 col-md-6">
             <label for="city">Ville :</label>
-            <input type="text" class="form-control" placeholder="" id="city" name="city">
+            <input type="text" class="form-control" placeholder="" id="city" name="city" required>
           </div>
           <div class="form-group col-sm-12 col-md-6">
             <label for="email">Email :</label>
-            <input type="email" class="form-control" id="email" placeholder="email">
+            <input type="email" class="form-control" id="email" placeholder="email" required>
           </div>
         </div>
       </div>
@@ -64,21 +64,21 @@
         <div class="row">
           <div class="form-group col-sm-12 col-md-6">
             <label for="adresse2">Adresse :</label>
-            <input type="text" class="form-control" placeholder="" id="adresse2" name="adresse2">
+            <input type="text" class="form-control" placeholder="" id="adresse2" name="adresse2" required>
           </div>
           <div class="form-group col-sm-12 col-md-6">
             <label for="zip">Code postal :</label>
-            <input type="text" class="form-control" placeholder="" id="zip" name="zipcode2">
+            <input type="text" class="form-control" placeholder="" id="zip" name="zipcode2" required>
           </div>
         </div>
         <div class="row">
           <div class="form-group col-sm-12 col-md-6">
             <label for="ctiy2">Ville :</label>
-            <input type="text" class="form-control" placeholder="" id="city2" name="city2">
+            <input type="text" class="form-control" placeholder="" id="city2" name="city2" required>
           </div>
           <div class="form-group col-sm-12 col-md-6">
             <label for="phone">Téléphone :</label>
-            <input type="tel" class="form-control" id="phone" placeholder="phone" name="phone">
+            <input type="tel" class="form-control" id="phone" placeholder="phone" name="phone" required>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@
             <div class="form-group" id="fs_ceiling">
               <label for="form_ceiling" data-hasqtip="6" oldtitle="Support en placo BA13 neuf pour des plafonds de 2.50m
                Peinture de marque Plafond Dec." title="">Peinture Plafonds: </label>
-              <input id="form_ceiling" type="number" name="ceiling_m" class="calcceiling validate[required,custom[integer],min[1]] text-input" value="0" min="1" step="any" data-hasqtip="7" oldtitle="Surface habitable" title="" aria-describedby="qtip-7">
+              <input id="form_ceiling" type="number" name="ceiling_m" class="calcceiling validate[custom[integer],min[0]] text-input" value="0" min="0" step="any" data-hasqtip="7" oldtitle="Surface habitable" title="" aria-describedby="qtip-7">
             </div>
           </div>
           <div class="col-md-4">
