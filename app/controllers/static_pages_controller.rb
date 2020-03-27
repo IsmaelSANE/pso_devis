@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
   end
 
   def help
+    @devis_page = true
   end
 
   def about

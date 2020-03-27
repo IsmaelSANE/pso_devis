@@ -4,7 +4,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 body {
  font-family: Rubik, Arial;
 }
@@ -13,6 +12,16 @@ body.homepage {
  background-color: rgb(33, 139, 190);
  font-family: Rubik, Arial;
  font-size: 16px;
+ margin-right: 0px;
+ margin-left: 0pxpx;
+}
+body.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+.no-gutters {
+  margin-right: 0px;
+  margin-left: 0px;
 }
 table {
   height: 40%;
@@ -95,7 +104,7 @@ h1 {
 #overlay {
   width: 80%;
   margin: 3% auto;
-  // height: 95vh;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 40px;
 }

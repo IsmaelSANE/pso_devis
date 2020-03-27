@@ -4,16 +4,17 @@
 <p>
   This is the home page for the online quotes generator.
 </p> -->
-<section id="overlay">
+<section id="overlay" class="container">
   <br>
   <%= image_tag("new-logo-pso.png", id: "logo", :alt => "pso-logo" ) %>
   <br>
   <hr>
-  <form id="monForm" class="container" action="<%= static_pages_help_path %>" method="GET">
+<div class="row">
+  <form id="monForm" class="col"  action="<%= static_pages_help_path %>" method="GET">
     <div class="row">
       <h1 class="col-12">TRAVAUX DE PEINTURE - DEVIS EN LIGNE</h1>
     </div>
-    <fieldset class="row">
+    <fieldset class="row no-gutters">
       <legend class="col-12">Vos Coordonnées</legend>
       <div class="col-12">
         <div class="form-group">
@@ -26,7 +27,7 @@
         </div>
       </div>
       <div class="col-12">
-        <div class="row">
+        <div class="row no-gutters">
           <div class="form-group col-sm-12 col-md-6">
             <label for="firstname">Prénom : </label>
             <input type="text" class="form-control" placeholder="" id="firstname" name="firstname" required>
@@ -36,7 +37,7 @@
             <input type="text" class="form-control" placeholder="" id="lastname" name="lastname" required>
           </div>
         </div>
-        <div class="row">
+        <div class="row no-gutters">
           <div class="form-group col-sm-12 col-md-6">
             <label for="adresse">Adresse :</label>
             <input type="text" class="form-control" placeholder="" id="adresse"  name="adresse" required>
@@ -46,7 +47,7 @@
             <input type="text" class="form-control" placeholder="" id="zipcode" name="zipcode" required>
           </div>
         </div>
-        <div class="row">
+        <div class="row no-gutters">
           <div class="form-group col-sm-12 col-md-6">
             <label for="city">Ville :</label>
             <input type="text" class="form-control" placeholder="" id="city" name="city" required>
@@ -58,10 +59,10 @@
         </div>
       </div>
     </fieldset>
-    <fieldset class="row">
+    <fieldset class="row no-gutters">
       <legend class="col-12">Adresse du chantier</legend>
       <div class="col">
-        <div class="row">
+        <div class="row no-gutters">
           <div class="form-group col-sm-12 col-md-6">
             <label for="adresse2">Adresse :</label>
             <input type="text" class="form-control" placeholder="" id="adresse2" name="adresse2" required>
@@ -71,7 +72,7 @@
             <input type="text" class="form-control" placeholder="" id="zip" name="zipcode2" required>
           </div>
         </div>
-        <div class="row">
+        <div class="row no-gutters">
           <div class="form-group col-sm-12 col-md-6">
             <label for="ctiy2">Ville :</label>
             <input type="text" class="form-control" placeholder="" id="city2" name="city2" required>
@@ -196,15 +197,17 @@
         </div>
       </div>
     </fieldset>
-    <fieldset class="row">
+    <fieldset class="row no-gutters">
       <div class="form-group col-md-12">
-        <div class="row justify-content-center">
-          <input type="checkbox" required="" name="cgv" class="validate[required] checkbox" value="ok">&nbsp; &nbsp; j'ai pris connaissance des
-          <a target="blank" href="#"> Conditions Générales de Vente</a>
+        <div class="row no-gutters">
+          <input type="checkbox" required="" id="cgv" name="cgv" value="ok" required>
+          <label for="cgv">
+            j'ai pris connaissance des <a target="blank" href="#" class="col">Conditions Générales de Vente</a>
+          </label>
         </div>
       </div>
     </fieldset>
-    <div class="row">
+    <div class="row no-gutters">
       <p class="col-md-12">
         <!--<label class="form_label_nostyle">&nbsp;</label> -->
         <input type="submit" id="SAVE" name="SAVE" value="Générer le devis">
@@ -212,5 +215,6 @@
       <br><br><br><br><br><br>
     </div>
   </form>
+</div>
 </section>
 <%= javascript_pack_tag 'custom' %>
