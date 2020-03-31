@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/home'
-  get 'static_pages/help'
+  # get 'static_pages/help'
+  # sets :controller, :action and :id in params
+  match 'static_pages/help', via: [:get, :post]
   get  'static_pages/about'
 end

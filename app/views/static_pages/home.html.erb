@@ -10,7 +10,8 @@
   <br>
   <hr>
 <div class="row">
-  <form id="monForm" class="col"  action="<%= static_pages_help_path %>" method="GET">
+  <form id="monForm" class="col"  action="<%= static_pages_help_path %>" method="POST">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
     <div class="row">
       <h1 class="col-12">TRAVAUX DE PEINTURE - DEVIS EN LIGNE</h1>
     </div>

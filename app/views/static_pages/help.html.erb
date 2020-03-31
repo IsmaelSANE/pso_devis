@@ -8,7 +8,7 @@
     </div>
     <div class="col-3">
       <ul>
-        <li><strong>DEVIS: N° XXXXX</strong></li>
+        <li><strong>DEVIS: N° <%= rand(1000..10000) %></strong></li>
         <li>Date: <%= Time.now.strftime("%d/%m/%Y") %></li>
         <li>Code client: 0113</li>
         <li>Devis valable 2 mois</li>
@@ -22,7 +22,14 @@
         Tél: 06 59 94 26 01 <br> E-mail: sarlpso33@gmail.com
       </p>
     </div>
-    <div id="customer" class="col-3 adress text-center"></div>
+    <div id="customer" class="col-3 adress text-center">
+      <p>
+        <strong>Adresse du Client</strong>
+        <br><%= @form_gender.to_s %> <%= @firstname.to_s %> <%= @lastname.to_s %>
+        <br><%= @adresse.to_s %><br>
+        <%= @zipcode.to_s %> <%= @city.to_s %>
+      </p>
+    </div>
   </div>
   <br><br><br><br><br>
   <div class="row">
@@ -37,15 +44,54 @@
             <th scope="col">TOTAL HT</th>
           </tr>
         </thead>
-        <tbody id="bodyForm"></tbody>
+        <tbody id="bodyForm">
+          <tr>
+            <td>Peinture Plafonds</td>
+            <td>m²</td>
+            <td><%= @ceiling_m.to_i %></td>
+            <td>14.5€</td>
+            <td><%= @ceiling_total.to_i %>€</td>
+          </tr>
+          <tr>
+            <td><%= @roomDetails.to_s %></td>
+            <td>m²</td>
+            <td><%= @wallsquant.to_i %></td>
+            <td><%= @wallscoef.to_f %>€</td>
+            <td><%= @wallstot.to_i %>€</td>
+          </tr>
+          <tr>
+            <td>Forfait Protection des ouvrants</td>
+            <td>U</td>
+            <td>1</td>
+            <td>250€</td>
+            <td>250€</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
   <br><br><br>
   <div class="row">
-    <div id="constructionSite" class="col-9 condition"></div>
+    <div id="constructionSite" class="col-9 condition">
+      <strong>Adresse du chantier:</strong><br><%= @adresse_chantier.to_s %>
+      <br><%= @zipcode_chantier.to_i %> <%= @city_chantier.to_s %><br>
+      Téléphone: <%= @phone.to_i %>
+    </div>
     <div class="col-3">
       <ul id="customerTot">
+        <li>
+          <strong>TOTAL HT:&nbsp;&nbsp;&nbsp;<%= @totalht.to_i %>€</strong>
+        </li>
+        <li>
+          <strong>
+            TVA 20%:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @tva.to_i %>€
+          </strong>
+        </li>
+        <li>
+          <strong>
+            TOTAL TTC: <%= @totalttc.to_i %>€
+          </strong>
+        </li>
       </ul>
     </div>
   </div>
@@ -83,7 +129,7 @@
   <div class="row justify-content-center">
     <%= link_to "Nouveau Devis", "/", :class => "col text-right"%>
     <span> || </span>
-    <a href="original.html" class="col">Transformer en pdf</a>
+    <a href="<%= static_pages_help_path %>.pdf" class="col">Transformer en pdf</a>
   </div>
 </div>
 <br><br>

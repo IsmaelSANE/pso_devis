@@ -53,7 +53,7 @@ const body = document.getElementById('bodyForm');
 
 
 // Populating the title element with text
-customer.innerHTML = `<p><strong>Adresse du Client</strong><br>${gender} ${firstName} ${lastName}<br>${adresse}<br>${zipCode} ${city}</p>`;
-constructionSite.innerHTML = `<strong>Adresse du chantier:</strong><br>${adresse2}<br>${zipCode2} ${city2}<br>Téléphone: ${phone}`
-customerTot.innerHTML = `<li><strong>TOTAL HT:&nbsp;&nbsp;&nbsp;${totalHt}€</strong></li><li><strong>TVA 20%:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${tva}€</strong></li><li><strong>TOTAL TTC: ${totalTtc}€</strong></li>`
-body.innerHTML = `<tr><td>Peinture Plafonds</td><td>m²</td><td>${ceilingQuant}</td><td>14.5€</td><td>${ceilingTot}€</td></tr><tr><td>${roomDetails}</td><td>m²</td><td>${wallsQuant}</td><td>${wallsCoef}€</td><td>${wallsTot}€</td></tr><tr><td>Forfait Protection des ouvrants</td><td>U</td><td>1</td><td>250€</td><td>250€</td></tr>`
+// customer.innerHTML = `<p><strong>Adresse du Client</strong><br>${gender} ${firstName} ${lastName}<br>${adresse}<br>${zipCode} ${city}</p>`;
+// constructionSite.innerHTML = `<strong>Adresse du chantier:</strong><br>${adresse2}<br>${zipCode2} ${city2}<br>Téléphone: ${phone}`
+// customerTot.innerHTML = `<li><strong>TOTAL HT:&nbsp;&nbsp;&nbsp;${totalHt}€</strong></li><li><strong>TVA 20%:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${tva}€</strong></li><li><strong>TOTAL TTC: ${totalTtc}€</strong></li>`
+// body.innerHTML = `<tr><td>Peinture Plafonds</td><td>m²</td><td>${ceilingQuant}</td><td>14.5€</td><td>${ceilingTot}€</td></tr><tr><td>${roomDetails}</td><td>m²</td><td>${wallsQuant}</td><td>${wallsCoef}€</td><td>${wallsTot}€</td></tr><tr><td>Forfait Protection des ouvrants</td><td>U</td><td>1</td><td>250€</td><td>250€</td></tr>`
