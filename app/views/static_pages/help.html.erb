@@ -1,7 +1,7 @@
 <% provide(:title, "Help") %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <br><br><br><br><br>
-<div id="p1" class="container" style="overflow: hidden; position: relative; background-color: white; width: 909px; height: 1286px;border: 1px solid silver;">
+<div id="p1" class="container">
   <div class="row my-5">
     <div class="col-9" style="padding-left:0;">
       <%= image_tag("new-logo-pso.png", :alt => "pso-logo" ) %>
@@ -119,13 +119,12 @@
     </div>
   </div>
   <br><br><br><br><br>
-  <br><br><br><br><br>
   <div class="row justify-content-center">
     <p class="sideline">SARL PSO Capital de 10000€ Siret 53978975000038 RCS Bordeaux 539 789 750 CODE APE 4321A</p>
   </div>
 </div>
 <br>
-<div class="container">
+<div id="pdf_link" class="container">
   <div class="row justify-content-center">
     <%= link_to "Nouveau Devis", "/", :class => "col text-right"%>
     <span> || </span>

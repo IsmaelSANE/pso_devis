@@ -116,4 +116,24 @@ h1 {
 .toppings label, .cheesy label {
   margin-right: 25px;
 }
+#p1 {
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  width: 909px;
+  height: 1200px;
+  border: 1px solid silver;
+}
+@media print {
+  #pdf_link {
+    display: none;
+  }
+
+  #p1 {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+}
 
