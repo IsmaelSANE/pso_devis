@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # sets :controller, :action and :id in params
   match 'static_pages/help', via: [:get, :post]
   get  'static_pages/about'
+
+  resources :quotes
 end
