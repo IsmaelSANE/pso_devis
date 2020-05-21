@@ -5,14 +5,9 @@ class QuotesController < ApplicationController
   end
   def show
     @quote = Quote.find(params[:id])
-    @devis_page = true
-
     @totalht = @quote.totalht
     @totalttc = @quote.totalttc
     @tva = (@totalttc.to_i*10 - @totalht.to_i*10) / 10;
-    @ceiling_m = params[:ceiling_m]
-    @ceiling_total = params[:ceiling_total]
-    @city_chantier = params[:city2]
     @walls = @quote.form_peinture
     case @walls
       when '9.5'
@@ -26,12 +21,11 @@ class QuotesController < ApplicationController
       else
         "Error"
     end
-    @wallsquant = params[:walls_m]
-    @wallscoef = params[:walls_price]
-    @wallstot = params[:walls_tot]
+    @devis_number = '%06d' % @quote.id
   end
   def new
     @quote = Quote.new
+    @home_page = true
   end
   def create
     quote = Quote.create(quote_params)

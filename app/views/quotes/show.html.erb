@@ -8,8 +8,8 @@
     </div>
     <div class="col-3">
       <ul>
-        <li><strong>DEVIS: N° <%= rand(1000..10000) %></strong></li>
-        <li>Date: <%= Time.now.strftime("%d/%m/%Y") %></li>
+        <li><strong>DEVIS: N° <%= @devis_number %></strong></li>
+        <li>Date: <%= @quote.created_at.strftime("%d/%m/%Y") %></li>
         <li>Code client: 0113</li>
         <li>Devis valable 2 mois</li>
       </ul>
@@ -56,7 +56,7 @@
             <td><%= @roomDetails.to_s %></td>
             <td>m²</td>
             <td><%= @quote.walls_m %></td>
-            <td><%= @quote.walls_coef %>€</td>
+            <td><%= @quote.form_peinture %>€</td>
             <td><%= @quote.walls_tot %>€</td>
           </tr>
           <tr>
@@ -126,9 +126,9 @@
 <br>
 <div id="pdf_link" class="container">
   <div class="row justify-content-center">
-    <%= link_to "Nouveau Devis", "/", :class => "col text-right"%>
+    <%= link_to "Nouveau Devis", new_quote_path, :class => "col text-right"%>
     <span> || </span>
-    <a href="<%= static_pages_help_path %>.pdf" class="col">Transformer en pdf</a>
+    <a href="<%= quote_path %>.pdf" class="col">Transformer en pdf</a>
   </div>
 </div>
 <br><br>
