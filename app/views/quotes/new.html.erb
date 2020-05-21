@@ -1,0 +1,221 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<% provide(:title, "Home") %>
+<!-- <h1>Pso devis</h1>
+<p>
+  This is the home page for the online quotes generator.
+</p> -->
+<section id="overlay" class="container">
+  <br>
+  <%= image_tag("new-logo-pso.png", id: "logo", :alt => "pso-logo" ) %>
+  <br>
+  <hr>
+<div class="row">
+  <form id="monForm" class="col"  action="/quotes" method="POST">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <div class="row">
+      <h1 class="col-12">TRAVAUX DE PEINTURE - DEVIS EN LIGNE</h1>
+    </div>
+    <fieldset class="row no-gutters">
+      <legend class="col-12">Vos Coordonnées</legend>
+      <div class="col-12">
+        <div class="form-group">
+          <label for="company">Civilité :</label>
+          <select id="form_gender" name="quote[form_gender]">
+            <option value="Mme">Mme</option>
+            <option value="Mlle">Mademoiselle</option>
+            <option value="M">Monsieur</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="firstname">Prénom : </label>
+            <input type="text" class="form-control" placeholder="" id="firstname" name="quote[firstname]" required>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="lastname">Nom : </label>
+            <input type="text" class="form-control" placeholder="" id="lastname" name="quote[lastname]" required>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="adresse">Adresse :</label>
+            <input type="text" class="form-control" placeholder="" id="adresse"  name="quote[adresse]" required>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="zipcode">Code postal :</label>
+            <input type="text" class="form-control" placeholder="" id="zipcode" name="quote[zipcode]" required>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="city">Ville :</label>
+            <input type="text" class="form-control" placeholder="" id="city" name="quote[city]" required>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="email">Email :</label>
+            <input type="email" class="form-control" id="email" placeholder="email" name="quote[email]"required>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="row no-gutters">
+      <legend class="col-12">Adresse du chantier</legend>
+      <div class="col">
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="adresse2">Adresse :</label>
+            <input type="text" class="form-control" placeholder="" id="adresse2" name="quote[adresse2]" required>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="zip">Code postal :</label>
+            <input type="text" class="form-control" placeholder="" id="zip" name="quote[zipcode2]" required>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="ctiy2">Ville :</label>
+            <input type="text" class="form-control" placeholder="" id="city2" name="quote[city2]" required>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="phone">Téléphone :</label>
+            <input type="tel" class="form-control" id="phone" placeholder="phone" name="quote[phone]" required>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="row">
+      <legend class="col-12">Prestations</legend>
+      <legend class="col-12">Plafonds</legend>
+      <fieldset class="col-12">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group" id="fs_ceiling">
+              <label for="form_ceiling" data-hasqtip="6" oldtitle="Support en placo BA13 neuf pour des plafonds de 2.50m
+               Peinture de marque Plafond Dec." title="">Peinture Plafonds: </label>
+              <input id="form_ceiling" type="number" name="quote[ceiling_m]" class="calcceiling validate[custom[integer],min[0]] text-input" value="0" min="0" step="any" data-hasqtip="7" oldtitle="Surface habitable" title="" aria-describedby="qtip-7">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="form_ceiling_price">prix au m²: </label><br>
+              <input id="form_ceiling_price" type="text" name="quote[ceiling_price]" tabindex="-1" readonly="" value="14.5">€
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group" id="eurofield">
+              <label for="form_ceiling_total">Total Plafonds HT: </label>
+               <input id="form_ceiling_total" type="text"  name="quote[ceiling_total]" tabindex="-1" readonly="" value="0">€
+               <input type="hidden" name="quote[forfait1e]" id="forfait1e" value="0">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <legend class="col-12">Murs</legend>
+      <fieldset id="fs_wall" class="col-12">
+        <p class="double">
+               <label for="check_walls" data-hasqtip="8" oldtitle="Support en placo BA13 neuf pour des plafonds de 2.50m" title="">Peinture Murs : </label>
+               <input type="radio" id="noWall" name="quote[check_walls]" value="0" checked="true"> Pas de murs
+               <input type="radio" id="allWall" name="quote[check_walls]" value="1"> Ensemble des murs
+               <!-- <input type="radio" id="details" name="check_walls" value="2"> Détails -->
+        </p>
+        <p id="walls_forfait" style="display: none;">
+         <!-- <label for="form_walls" title="en mode forfait la surface de references est egale a celle des plafonds">Peinture Tous les murs : </label>-->
+         <select id="fw" class="form_peinture" name="quote[form_peinture]">
+            <option class="impress" value="9.5">Murs Impression</option>
+            <option class="satineBlanc" value="12">Murs Blanc Mat</option>
+            <option class="satinePastel" value="14">Murs Blanc Velour</option>
+            <option class="satine" value="16">Murs Pastel</option>
+         </select>
+         <input type="text" id="form_walls" name="quote[walls_m]" class="calcwalls" tabindex="-1" value="0">m²
+         <input type="hidden" id="form_walls_coef" name="quote[walls_coef]" tabindex="-1" readonly="" value="2.62" data-hasqtip="9" oldtitle="Le coefficient 2.62 est un standard pour évaluer la surface des murs par rapport au sol" title="">* coef Murs *
+         <input type="text" id="form_walls_price" class="coefMurs" name="quote[walls_price]" tabindex="-1" readonly="" value="9.5">€ =
+         <input type="text" id="form_walls_tot" name="quote[walls_tot]" tabindex="-1" readonly="" value="0">Total
+        </p>
+        <p id="walls_detail" style="display: none;" class="input_fields_wrap">
+          <!-- <button type="button" class="add_field_button">Ajouter une pièce</button>
+          <div align="center" id="todel" class="todel" style="display: none;">
+            <input type="hidden" id="monid" value="2">
+            <select class="piece">
+              <option value="1">Séjour</option>
+              <option value="2">Cuisine</option>
+              <option value="3">Chambre1</option>
+              <option value="4">Chambre2</option>
+              <option value="5">Chambre3</option>
+              <option value="6">Chambre4</option>
+              <option value="7">WC</option>
+              <option value="8">SDB1</option>
+              <option value="9">SDB2</option>
+              <option value="10">Entrée</option>
+              <option value="11">Couloir</option>
+              <option value="12">Buanderie</option>
+              <option value="13">Garage</option>
+              <option value="14">Sous-sol</option>
+              <option value="15">Autres</option>
+            </select>
+            <select id="fw2" class="peinture">
+              <option class="impress"value="9.5">Murs Dec. Impression</option>
+              <option class="satineBlanc" value="13.5">Murs Dec. Satiné Blanc</option>
+              <option class="satinePastel" value="15.2">Murs Dec. Satiné Pastel</option>
+            </select>
+            <input type="number" id="form_wall" value="0" min="1" step="any" data-hasqtip="12">m²
+            <input type="hidden" id="form_wall_coef" value="2.62" title="Le coefficient 2.62 est un standard pour évaluer la surface des murs par rapport au sol">* coef Murs *
+            <input type="text" id="form_wall_price" class="coefMurs2" value="9.5">€ =
+            <input type="text" id="form_wall_tot" value="0">Total
+          </div> -->
+        </p>
+        <p></p>
+        <p id="eurofield">
+           <label for="form_walls_total">Total Murs HT : </label>
+           <input type="text" id="form_walls_total" name="quote[walls_total]" tabindex="-1" readonly="" value="0">€
+        </p>
+      </fieldset>
+    </div>
+    <fieldset id="fs_service" class="row">
+      <legend class="col-12">Services</legend>
+      <p id="eurofield" class="col-12">
+         <label for="form_services_total" data-hasqtip="10" oldtitle="Le forfait est de 250€ pour plafonds seuls ou de 300€ pour plafonds+murs" title="">Forfait Protection des ouvrants : </label>
+         <input type="text" id="form_services_total" name="quote[services_total]" tabindex="-1" readonly="" value="250">€
+      </p>
+    </fieldset>
+    <fieldset id="totaux" class="row">
+      <legend class="col-12">Totaux</legend>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group" id="eurofield">
+              <label for="form_totalht">Total HT : </label>
+              <input type="text" id="form_totalht" name="quote[totalht]" class="euro" tabindex="-1" readonly="">€
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group" id="eurofield">
+              <label for="form_totalttc">Total TTC : </label>
+              <input type="text" id="form_totalttc" name="quote[totalttc]" class="euro" tabindex="-1" readonly="">€
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="row no-gutters">
+      <div class="form-group col-md-12">
+        <div class="row no-gutters">
+          <input type="checkbox" required="" id="cgv" name="quote[cgv]" value="ok" required>
+          <label for="cgv">
+            j'ai pris connaissance des <a target="blank" href="#" class="col">Conditions Générales de Vente</a>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="row no-gutters">
+      <p class="col-md-12">
+        <!--<label class="form_label_nostyle">&nbsp;</label> -->
+        <input type="submit" id="SAVE" name="quote[SAVE]" value="Générer le devis">
+      </p>
+      <br><br><br><br><br><br>
+    </div>
+  </form>
+</div>
+</section>
+<%= javascript_pack_tag 'custom' %>

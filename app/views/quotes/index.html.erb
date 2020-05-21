@@ -1,0 +1,9 @@
+<h1> Les devis </h1>
+
+<% @quotes.each do |quote| %>
+  <h2> <%= quote.devis %> </h2>
+  <p> <%= quote.lastname %> </p>
+  <p> <%= quote.adresse2 %> </p>
+  <p> <%= quote.totalht %> </p>
+  <%= link_to "Allez voir", quote_path(quote)%>
+<% end %>

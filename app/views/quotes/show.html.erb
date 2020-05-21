@@ -1,0 +1,135 @@
+<% provide(:title, "Help") %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<br><br><br><br><br>
+<div id="p1" class="container">
+  <div class="row my-5">
+    <div class="col-9" style="padding-left:0;">
+      <%= image_tag("new-logo-pso.png", :alt => "pso-logo" ) %>
+    </div>
+    <div class="col-3">
+      <ul>
+        <li><strong>DEVIS: N° <%= rand(1000..10000) %></strong></li>
+        <li>Date: <%= Time.now.strftime("%d/%m/%Y") %></li>
+        <li>Code client: 0113</li>
+        <li>Devis valable 2 mois</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 condition1">
+      <p>
+        <strong>PSO SARL</strong><br>9B RUE PERES<br>33600 PESSAC<br>
+        Tél: 06 59 94 26 01 <br> E-mail: sarlpso33@gmail.com
+      </p>
+    </div>
+    <div id="customer" class="col-3 adress text-center">
+      <p>
+        <strong>Adresse du Client</strong>
+        <br><%= @quote.form_gender %> <%= @quote.firstname %> <%= @quote.lastname %>
+        <br><%= @quote.adresse %><br>
+        <%= @quote.zipcode %> <%= @quote.city %>
+      </p>
+    </div>
+  </div>
+  <br><br><br><br><br>
+  <div class="row">
+    <div class="col">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Désignation</th>
+            <th scope="col">Unité</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix unitaire</th>
+            <th scope="col">TOTAL HT</th>
+          </tr>
+        </thead>
+        <tbody id="bodyForm">
+          <tr>
+            <td>Peinture Plafonds</td>
+            <td>m²</td>
+            <td><%= @quote.ceiling_m %></td>
+            <td>14.5€</td>
+            <td><%= @quote.ceiling_total %>€</td>
+          </tr>
+          <tr>
+            <td><%= @roomDetails.to_s %></td>
+            <td>m²</td>
+            <td><%= @quote.walls_m %></td>
+            <td><%= @quote.walls_coef %>€</td>
+            <td><%= @quote.walls_tot %>€</td>
+          </tr>
+          <tr>
+            <td>Forfait Protection des ouvrants</td>
+            <td>U</td>
+            <td>1</td>
+            <td>250€</td>
+            <td>250€</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="row">
+    <div id="constructionSite" class="col-9 condition">
+      <strong>Adresse du chantier:</strong><br><%= @quote.adresse2 %>
+      <br><%= @quote.zipcode2 %> <%= @quote.city2 %><br>
+      Téléphone: <%= @quote.phone %>
+    </div>
+    <div class="col-3">
+      <ul id="customerTot">
+        <li>
+          <strong>TOTAL HT:&nbsp;&nbsp;&nbsp;<%= @quote.totalht %>€</strong>
+        </li>
+        <li>
+          <strong>
+            TVA 20%:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @tva.to_i %>€
+          </strong>
+        </li>
+        <li>
+          <strong>
+            TOTAL TTC: <%= @quote.totalttc %>€
+          </strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col">
+      <p class="condition">
+        Accompte de 20% à la commande. Accompte de 30% au début des travaux. Solde à la livraison; paiement comptant dès réception.<br><br>
+        Merci de nous retourner un exemplaire de ce Devis signé avec vôtre nom et
+        revêtu de la mension "Bon pour accord et commande"
+      </p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row mx-2">
+    <div class="col-4 corporat text-center">
+      <p style = "text-decoration:underline;">Pour l'entreprise</p>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4 signatur">
+      <p class="text-center" style = "text-decoration:underline;">Pour le client</p>
+      <p>A &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Le</p>
+      <p>Mention</p>
+      <p>Nom &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Signature</p>
+    </div>
+  </div>
+  <br><br><br><br><br>
+  <div class="row justify-content-center">
+    <p class="sideline">SARL PSO Capital de 10000€ Siret 53978975000038 RCS Bordeaux 539 789 750 CODE APE 4321A</p>
+  </div>
+</div>
+<br>
+<div id="pdf_link" class="container">
+  <div class="row justify-content-center">
+    <%= link_to "Nouveau Devis", "/", :class => "col text-right"%>
+    <span> || </span>
+    <a href="<%= static_pages_help_path %>.pdf" class="col">Transformer en pdf</a>
+  </div>
+</div>
+<br><br>
+<%= javascript_pack_tag 'devis' %>
