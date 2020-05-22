@@ -1,9 +1,18 @@
 <h1> Les devis </h1>
+<br> <br> <br>
 
-<% @quotes.each do |quote| %>
-  <h2> <%= quote.devis %> </h2>
-  <p> <%= quote.lastname %> </p>
-  <p> <%= quote.adresse2 %> </p>
-  <p> <%= quote.totalht %> </p>
-  <%= link_to "Allez voir", quote_path(quote)%>
-<% end %>
+<div class="quotes">
+  <div class="container">
+    <% @quotes.each do |quote| %>
+      <%= link_to "Allez voir", quote_path(quote)%>
+      <div class="quote">
+        <p class="content">
+          <strong>Adresse du chantier:</strong>
+          <%= quote.adresse2 %> <%= quote.zipcode2 %> <%= quote.city2 %>
+          <strong>Montant HT:</strong><%= quote.totalht %> €
+        </p>
+        <p class="time">Créer le <%= quote.created_at.strftime("%d/%m/%Y") %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
