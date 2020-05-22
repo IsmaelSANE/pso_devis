@@ -7,9 +7,10 @@
       <%= link_to "Allez voir", quote_path(quote)%>
       <div class="quote">
         <p class="content">
-          <strong>Adresse du chantier:</strong>
-          <%= quote.adresse2 %> <%= quote.zipcode2 %> <%= quote.city2 %>
-          <strong>Montant HT:</strong><%= quote.totalht %> €
+          <strong>Adresse du chantier:</strong>&nbsp;
+          <%= quote.adresse2 %> <%= quote.zipcode2 %> <%= quote.city2 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <strong>Montant HT:</strong>&nbsp;<%= quote.totalht %> €&nbsp;&nbsp;&nbsp;
+          <strong>Client:</strong>&nbsp;<%= quote.form_gender %> <%= quote.lastname %>
         </p>
         <p class="time">Créer le <%= quote.created_at.strftime("%d/%m/%Y") %></p>
       </div>
