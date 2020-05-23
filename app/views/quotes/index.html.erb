@@ -1,16 +1,16 @@
 <h1> Les devis </h1>
 <br> <br> <br>
-
 <div class="quotes">
   <div class="container">
     <% @quotes.each do |quote| %>
-      <%= link_to "Allez voir", quote_path(quote)%>
+      <%= link_to "Voir le devis", quote_path(quote), :class => "button"%>
       <div class="quote">
         <p class="content">
+          <strong>Client:</strong>&nbsp;<%= quote.form_gender %> <%= quote.lastname %>&nbsp;&nbsp;&nbsp;
+          <strong>Téléphone:</strong> <%= quote.phone %>&nbsp;&nbsp;&nbsp;
           <strong>Adresse du chantier:</strong>&nbsp;
           <%= quote.adresse2 %> <%= quote.zipcode2 %> <%= quote.city2 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <strong>Montant HT:</strong>&nbsp;<%= quote.totalht %> €&nbsp;&nbsp;&nbsp;
-          <strong>Client:</strong>&nbsp;<%= quote.form_gender %> <%= quote.lastname %>
+          <strong>Montant HT:</strong>&nbsp;<%= quote.totalht %> €
         </p>
         <p class="time">Créer le <%= quote.created_at.strftime("%d/%m/%Y") %></p>
       </div>

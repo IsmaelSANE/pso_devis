@@ -33,12 +33,12 @@
 }
 
 p.time {
-  color: #0084d7;
+  color: #218bbe;
   font-size: 12px;
   margin-top: 12px;
 }
 
-button {
+.button {
   background-color: rgb(241, 115, 16);
   border: none;
   color: #fff;
@@ -49,7 +49,9 @@ button {
   transition: background-color 0.5s;
 }
 
-button:hover {
+.button:hover {
   background-color: #c24609;
+  color: white;
   transition: background-color 0.5s;
+  text-decoration: none;
 }
