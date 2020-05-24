@@ -1,5 +1,5 @@
-<h1> Les devis </h1>
-<br> <br> <br>
+<%= content_tag :h1, "Les devis" %>
+<%= content_tag :br %><%= content_tag :br %>
 <div class="quotes">
   <div class="container">
     <% @quotes.each do |quote| %>
@@ -12,8 +12,13 @@
           <%= quote.adresse2 %> <%= quote.zipcode2 %> <%= quote.city2 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <strong>Montant HT:</strong>&nbsp;<%= quote.totalht %> €
         </p>
-        <p class="time">Créer le <%= quote.created_at.strftime("%d/%m/%Y") %></p>
+        <p class="time">
+          Créer le <%= quote.created_at.strftime("%d/%m/%Y") %>&nbsp;&nbsp;&nbsp;
+         <%= link_to "modifier le devis", edit_quote_path(quote) %>&nbsp;&nbsp;&nbsp;
+         <%= link_to "suprimer le devis", quote_path(quote), methode: :delete %>
+        </p>
       </div>
     <% end %>
   </div>
 </div>
+

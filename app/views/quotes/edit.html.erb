@@ -1,0 +1,178 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<% provide(:title, "Home") %>
+<!-- <h1>Pso devis</h1>
+<p>
+  This is the home page for the online quotes generator.
+</p> -->
+<section id="overlay" class="container">
+  <br>
+  <%= image_tag("new-logo-pso.png", id: "logo", :alt => "pso-logo" ) %>
+  <br>
+  <hr>
+<div class="row">
+  <%= form_with model: @quote, class: "col" do |f| %>
+    <div class="row">
+      <%= content_tag :h1, "TRAVAUX DE PEINTURE - DEVIS EN LIGNE" , :class => "col-12"%>
+    </div>
+    <fieldset class="row no-gutters">
+      <%= content_tag :legend, "Vos Coordonnées", :class => "col-12"%>
+      <div class="col-12">
+        <div class="form-group">
+          Civilité :
+          <%= select_tag(:form_gender, raw('<option value="M">Monsieur</option><option value="Mme">Madame</option><option value="Mlle">Mademoiselle</option>')) %>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            Prénom :<br />
+            <%= f.text_field :firstname , :class => "form-control", :required => true %>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            Nom :<br />
+            <%= f.text_field :lastname , :class => "form-control", :required => true %>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            Adresse :<br />
+            <%= f.text_field :adresse , :class => "form-control", :required => true %>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            Code postal :<br />
+            <%= f.text_field :zipcode , :class => "form-control", :required => true %>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            Ville :<br />
+            <%= f.text_field :city , :class => "form-control", :required => true %>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            Email :<br />
+            <%= f.text_field :email , :class => "form-control", :required => true %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="row no-gutters">
+      <%= content_tag :legend, "Adresse du chantier", :class => "col-12"%>
+      <div class="col">
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            Adresse :<br />
+            <%= f.text_field :adresse2 , :class => "form-control", :required => true %>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            Code postal :<br />
+            <%= f.text_field :zipcode2 , :class => "form-control", :required => true %>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="form-group col-sm-12 col-md-6">
+            Ville :<br />
+            <%= f.text_field :city2 , :class => "form-control", :required => true %>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            Téléphone :<br />
+            <%= f.text_field :phone , :class => "form-control", :required => true %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="row">
+      <%= content_tag :legend, "Prestations", :class => "col-12" %>
+      <%= content_tag :legend, "Plafonds", :class => "col-12" %>
+      <fieldset class="col-12">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group" id="fs_ceiling">
+              Peinture Plafonds:<br />
+              <%= f.text_field :ceiling_m , :class => "calcceiling validate[custom[integer],min[0]] text-input", :required => true, :value =>"0", :min =>"0", :step => "any", :id => "form_ceiling" %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="form_ceiling_price">prix au m²: </label><br>
+              <input id="form_ceiling_price" type="text" name="quote[ceiling_price]" tabindex="-1" readonly="" value="14.5">€
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group" id="eurofield">
+              <label for="form_ceiling_total">Total Plafonds HT: </label>
+               <input id="form_ceiling_total" type="text"  name="quote[ceiling_total]" tabindex="-1" readonly="" value="0">€
+               <input type="hidden" name="quote[forfait1e]" id="forfait1e" value="0">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <%= content_tag :legend, "Murs", :class => "col-12" %>
+      <fieldset id="fs_wall" class="col-12">
+        <p class="double">
+           <label for="check_walls" data-hasqtip="8" oldtitle="Support en placo BA13 neuf pour des plafonds de 2.50m" title="">Peinture Murs : </label>
+           <input type="radio" id="noWall" name="quote[check_walls]" value="0" checked="true"> Pas de murs
+           <input type="radio" id="allWall" name="quote[check_walls]" value="1"> Ensemble des murs
+        </p>
+        <p id="walls_forfait" style="display: none;">
+          <%= select_tag(:form_peinture,
+          raw('<option value="9.5">Murs Impression</option>
+               <option value="12">Murs Blanc Mat</option>
+               <option value="14">Murs Blanc Velour</option>
+               <option value="16">Murs Pastel</option>'), :id => "fw") %>
+         <input type="text" id="form_walls" name="quote[walls_m]" class="calcwalls" tabindex="-1" value="0">m²
+         <input type="hidden" id="form_walls_coef" name="quote[walls_coef]" tabindex="-1" readonly="" value="2.62" data-hasqtip="9" oldtitle="Le coefficient 2.62 est un standard pour évaluer la surface des murs par rapport au sol" title="">* coef Murs *
+         <input type="text" id="form_walls_price" class="coefMurs" name="quote[walls_price]" tabindex="-1" readonly="" value="9.5">€ =
+         <input type="text" id="form_walls_tot" name="quote[walls_tot]" tabindex="-1" readonly="" value="0">Total
+        </p>
+        <p id="walls_detail" style="display: none;" class="input_fields_wrap"></p>
+        <p></p>
+        <p id="eurofield">
+           <label for="form_walls_total">Total Murs HT : </label>
+           <input type="text" id="form_walls_total" name="quote[walls_total]" tabindex="-1" readonly="" value="0">€
+        </p>
+      </fieldset>
+    </div>
+    <fieldset id="fs_service" class="row">
+      <%= content_tag :legend, "Services", :class => "col-12" %>
+      <p id="eurofield" class="col-12">
+         Forfait Protection des ouvrants :
+         <%= f.text_field :services_total, :type => "text", :required => true, :id => "form_services_total", :value => "250" %>€
+      </p>
+    </fieldset>
+    <fieldset id="totaux" class="row">
+      <%= content_tag :legend, "Totaux", :class => "col-12" %>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group" id="eurofield">
+              Total HT :
+              <%= f.text_field :totalht, :type => "text", :class => "euro", :required => true, :id => "form_totalht" %>€
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group" id="eurofield">
+              Total TTC :
+              <%= f.text_field :totalttc, :type => "text", :class => "euro", :required => true, :id => "form_totalttc" %>€
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="row no-gutters">
+      <div class="form-group col-md-12">
+        <div class="row no-gutters">
+          <%= check_box_tag 'cgv', :value => "ok", :required => true %>
+          j'ai pris connaissance des <%= link_to "Conditions Générales de Vente", about_path %>
+        </div>
+      </div>
+    </fieldset>
+    <div class="row no-gutters">
+      <p class="col-md-12">
+        <%= f.submit "Générer le devis" %>
+      </p>
+      <br><br><br><br><br><br>
+    </div>
+  <% end %>
+</div>
+</section>
+<%= javascript_pack_tag 'custom' %>

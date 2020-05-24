@@ -11,7 +11,7 @@
   margin: 40px 0;
 }
 
-.quotes a,
+.button,
 .create .actions input {
   background-color: #f2580b;
   border: none;
@@ -36,6 +36,9 @@ p.time {
   color: #218bbe;
   font-size: 12px;
   margin-top: 12px;
+  a {
+    text-decoration: none;
+  }
 }
 
 .button {

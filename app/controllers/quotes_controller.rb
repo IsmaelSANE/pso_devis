@@ -32,13 +32,18 @@ class QuotesController < ApplicationController
     redirect_to quote_path(quote)
   end
   def edit
-
+    @quote = Quote.find(params[:id])
+    @home_page = true
   end
   def update
-
+    @quote = Quote.find(params[:id])
+    @quote.update(quote_params)
+    redirect_to quote_path
   end
-  def delete
-
+  def destroy
+    @quote = Quote.find(params[:id])
+    @quote.destroy
+    redirect_to quote_path
   end
   def about
 
@@ -46,8 +51,6 @@ class QuotesController < ApplicationController
     private
 
     def quote_params
-      # params.require(:quote).permit(:devis, :client, :adresse_site, :date,)
-
       params.require(:quote).permit(:form_gender, :firstname, :lastname, :adresse, :zipcode, :city, :email, :adresse2, :zipcode2, :city2, :phone, :ceiling_m, :ceiling_price, :ceiling_total, :forfait1e, :check_walls, :form_peinture, :walls_m, :walls_coef, :walls_price, :walls_tot, :walls_total, :services_total, :totalht, :totalttc)
     end
 end
