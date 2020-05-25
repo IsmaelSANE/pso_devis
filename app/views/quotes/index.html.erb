@@ -14,9 +14,9 @@
         </p>
         <p class="time">
           Créer le <%= quote.created_at.strftime("%d/%m/%Y") %>&nbsp;&nbsp;&nbsp;
-         <%= link_to "Modifier le devis", edit_quote_path(quote) %>&nbsp;&nbsp;&nbsp;
-         <%= link_to "Suprimer le devis", quote_path(quote), methode: :delete %>&nbsp;&nbsp;&nbsp;
-         <%= link_to "Nouveau devis", new_quote_path %>
+          <%= link_to "Modifier le devis", edit_quote_path(quote) %>&nbsp;&nbsp;&nbsp;
+          <%= link_to "Suprimer le devis", quote_path(quote), method: :delete %>&nbsp;&nbsp;&nbsp;
+          <%= link_to "Nouveau devis", new_quote_path %>
         </p>
       </div>
     <% end %>
