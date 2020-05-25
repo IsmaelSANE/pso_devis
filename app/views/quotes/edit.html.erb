@@ -19,7 +19,7 @@
       <div class="col-12">
         <div class="form-group">
           Civilité :
-          <%= select_tag(:form_gender, raw('<option value="M">Monsieur</option><option value="Mme">Madame</option><option value="Mlle">Mademoiselle</option>')) %>
+          <%= select(:quote, :form_gender, [['Monsieur', 'M'], ['Madame', 'Mme'], ['Mademoiselle', 'Mlle']]) %>
         </div>
       </div>
       <div class="col-12">
