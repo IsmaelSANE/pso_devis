@@ -128,7 +128,7 @@
   <div class="row justify-content-center">
     <%= link_to "Nouveau Devis", new_quote_path, :class => "col text-right"%>
     <span> || </span>
-    <%= link_to "Transformer en pdf", quote_path(@quote, :format => "pdf") , :class => "col"%>
+    <%= link_to "Transformer en pdf", quote_path(@quote, :format => "pdf"), target: "_blank", :class => "col"%>
   </div>
   <div id="pdf_link" class="container">
     <div class="row justify-content-center">
