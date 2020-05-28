@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  root 'quotes#new'
   get 'static_pages/home'
   # get 'static_pages/help'
   # sets :controller, :action and :id in params
